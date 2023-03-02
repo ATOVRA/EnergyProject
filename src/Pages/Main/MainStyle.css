@@ -35,6 +35,8 @@ main{
 }
 .motionDiv{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
     /* border: 1px solid red; */
 }

@@ -1,110 +1,215 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-header{
-    position: sticky;
-    top: 15px;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    /* border: 1px solid; */
+header {
+  position: sticky;
+  top: 15px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  /* border: 1px solid; */
 }
-.container{
-    position: relative;
-    width: 1440px;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    box-shadow: 0 0 5px 2px rgba(1, 1, 1, 0.2);
-    border-radius: 45px;
-    /* border: 1px solid red; */
+.container {
+  position: relative;
+  width: 1440px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 0 5px 2px rgba(1, 1, 1, 0.2);
+  border-radius: 45px;
+  /* border: 1px solid red; */
 }
-nav{
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    /* border: 1px solid blue; */
+nav {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid blue; */
 }
-.headerLogo{
-    width: 170px;
-    height: 170px;
-    display: flex;
-    align-items: center;
-    /* border: 1px solid red; */
-    cursor: pointer;
+.headerLogo {
+  width: 170px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid red; */
 }
-.navLogo{
-    width: 100%;
+.navLogo {
+  width: 100%;
+  height: inherit;
 }
-.menu-ul{
-    display: flex;
-    gap: 80px;
-    list-style: none;
+.menu-ul {
+  display: flex;
+  gap: 80px;
+  list-style: none;
 }
-.menu-ul li{
-    font-size: 20px;
-    font-weight: 600;
-    color: black;
-    cursor: pointer;
-    transition: ease-in-out 0.25s;
+.menu-ul li {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  transition: ease-in-out 0.25s;
 }
-.menu-ul li:hover{
-    color: blue;
+.menu-ul li:hover {
+  color: blue;
+  scale: 1.1;
+}
+.siteLanguages {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.uzLanguage {
+  width: 70px;
+  height: 30px;
+  border: 2px solid rgb(0, 94, 255);
+  overflow: hidden;
+  border-radius: 10px;
+}
+.ruLanguage {
+  width: 70px;
+  height: 30px;
+  overflow: hidden;
+  border: 2px solid rgb(0, 94, 255);
+  border-radius: 10px;
+}
+.uzLanguage button {
+  width: 100%;
+  height: inherit;
+  background-color: white;
+  color: rgb(0, 94, 255);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: transparent;
+  transition: ease-in-out 0.3s;
+}
+.ruLanguage button {
+  width: 100%;
+  height: inherit;
+  background-color: white;
+  color: rgb(0, 94, 255);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: transparent;
+  transition: ease-in-out 0.3s;
+}
+.uzLanguage button:hover {
+  background-color: rgb(0, 94, 255);
+  color: white;
+}
+.ruLanguage button:hover {
+  background-color: rgb(0, 94, 255);
+  color: white;
+}
+.menuIcon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: ease-in-out 0.3s;
+}
+.menuIcon:hover{
     scale: 1.1;
 }
-.siteLanguages{
-    position: relative;
+.menuHoverDiv {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 180px;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  overflow: hidden;
+  transition: all 0.25s;
+  /* border: 2px solid; */
+}
+.menuHoverDiv ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+}
+.menuHoverDiv ul li {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+  transition: ease-in-out 0.25s;
+}
+.menuHoverDiv ul li:hover {
+  color: blue;
+  scale: 1.1;
+}
+@media (max-width: 1200px) {
+  .menu-ul {
+    gap: 30px;
+  }
+}
+@media (max-width: 992px) {
+  .siteLanguages {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .headerLogo {
+    width: 130px;
+  }
+  .menu-ul {
+    gap: 20px;
+  }
+  .menu-ul li {
+    font-size: 18px;
+  }
+  .adminMenuLi {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  header {
+    top: 0;
+    height: 90px;
+  }
+  .container {
+    border-radius: 0;
+  }
+  nav {
+    width: 90%;
+    justify-content: end;
+  }
+  .headerLogo {
+    width: 110px;
+    margin-right: auto;
+  }
+  .menu-ul {
+    display: none;
+  }
+  .siteLanguages {
     display: flex;
-    gap: 10px;
-}
-.uzLanguage{
-    width: 70px;
-    border: 2px solid rgb(0, 94, 255);
-    overflow: hidden;
-    border-radius: 10px;
-}
-.ruLanguage{
-    width: 70px;
-    overflow: hidden;
-    border: 2px solid rgb(0, 94, 255);
-    border-radius: 10px;
-}
-.uzLanguage button{
-    width: 100%;
-    height: 30px;
-    background-color: white;
-    color: rgb(0, 94, 255);
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    border: transparent;
-    transition: ease-in-out 0.3s;
-}
-.ruLanguage button{
-    width: 100%;
-    height: 30px;
-    background-color: white;
-    color: rgb(0, 94, 255);
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    border: transparent;
-    transition: ease-in-out 0.3s;
-}
-.uzLanguage button:hover{
-    background-color: rgb(0, 94, 255);
-    color: white;
-}
-.ruLanguage button:hover{
-    background-color: rgb(0, 94, 255);
-    color: white;
+    gap: 5px;
+    margin-right: 10px;
+  }
+  .uzLanguage{
+    width: 45px;
+    height: 27px;
+  }
+  .ruLanguage{
+    width: 45px;
+    height: 27px;
+  }
+  .menuIcon {
+    display: inline-block;
+  }
 }
