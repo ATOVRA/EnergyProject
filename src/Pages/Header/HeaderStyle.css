@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 header {
   position: sticky;
@@ -54,6 +53,7 @@ nav {
   font-weight: 600;
   color: black;
   cursor: pointer;
+  user-select: none;
   transition: ease-in-out 0.25s;
 }
 .menu-ul li:hover {
@@ -121,7 +121,7 @@ nav {
 }
 .menuHoverDiv {
   position: absolute;
-  top: 100px;
+  top: 90px;
   right: 0;
   width: 180px;
   height: 0;

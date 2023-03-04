@@ -79,17 +79,17 @@ export const Main = () => {
   return (
     <main>
       <div className="main-container">
-        <section className="sectionTop" ref={ref}>
+        <section className="sectionTop" ref={ref} id='bosh sahifa'>
           <motion.div animate={animationLeft} className='motionDiv'>
             <img src={Photo1} alt="" className="topPhoto1" />
-            <img src={Photo2} alt="" className="topPhoto2" />
+            <img src={Photo2} alt="" className="topPhoto2 topPhotoHover" />
           </motion.div>
           <motion.div animate={animationRight} className='motionDiv'>
-            <img src={Photo3} alt="" className="topPhoto3" />
+            <img src={Photo3} alt="" className="topPhoto3 topPhotoHover" />
             <img src={Photo4} alt="" className="topPhoto4" />
           </motion.div>
         </section>
-        <section className="section2" >
+        <section className="section2" id="ishlarimiz">
           <h1 className="section2Title">Ishlarimiz</h1>
           <div className="ishlarimizPhotosDiv">
             <motion.div className="motionDiv2" animate={animationLeft2}>
@@ -104,7 +104,7 @@ export const Main = () => {
             </motion.div>
           </div>
         </section>
-        <section className="section3">
+        <section className="section3" id="haqimizda">
           <h1>Biz Haqimizda</h1>
           <p className="aboutText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
