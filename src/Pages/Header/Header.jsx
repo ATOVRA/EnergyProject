@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-scroll";
 import "./HeaderStyle.css";
 import LogoEnergy from "../Images/logo.jpg";
 import { HiMenu } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
-
+import { Context } from "../../Context/Context";
+import { Language } from "../../Lang/Lang";
 export const Header = () => {
   const [menuDiv, setMenuDiv] = useState(!true);
-
+  const { lang, setLang } = useContext(Context);
   const handleMenu = () => {
     setMenuDiv(!menuDiv);
   };
-
+  const handleClick = (event) => {
+    switch (event.target.id) {
+      case "ru":
+        {
+          setLang("ru");
+        }
+        break;
+      case "uz": {
+        setLang("uz");
+      }
+    }
+  };
   return (
     <header>
       <div className="container">
@@ -36,7 +48,7 @@ export const Header = () => {
                 smooth={true}
                 spy={true}
               >
-                Bosh sahifa
+                {Language[lang].boshSahifa}
               </Link>
             </li>
             <li>
@@ -47,7 +59,7 @@ export const Header = () => {
                 smooth={true}
                 spy={true}
               >
-                Ishlarimiz
+                {Language[lang].ishlarimiz}
               </Link>
             </li>
             <li>
@@ -58,7 +70,7 @@ export const Header = () => {
                 smooth={true}
                 spy={true}
               >
-                Biz haqimizda
+                {Language[lang].bizHaqimizda}
               </Link>
             </li>
             <NavLink
@@ -66,15 +78,21 @@ export const Header = () => {
               style={{ textDecoration: "none" }}
               className="adminMenuLi"
             >
-              <li>Admin</li>
+              <li>
+                {Language[lang].admin}
+              </li>
             </NavLink>
           </ul>
           <div className="siteLanguages">
             <div className="uzLanguage">
-              <button>Uz</button>
+              <button onClick={handleClick} id="uz">
+                Uz
+              </button>
             </div>
             <div className="ruLanguage">
-              <button>Ru</button>
+              <button onClick={handleClick} id="ru">
+                Ru
+              </button>
             </div>
           </div>
           <HiMenu className="menuIcon" onClick={handleMenu} />

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./MainStyle.css";
 import Photo1 from "../Images/photo1.jpg";
 import Photo2 from "../Images/photo2.jpg";
@@ -13,8 +13,11 @@ import Ishlarimiz6 from "../Images/ishlarimiz6.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
+import { Language } from "../../Lang/Lang";
+import { Context } from "../../Context/Context";
 
 export const Main = () => {
+  const { lang } = useContext(Context);
   const { ref, inView } = useInView({threshold: 0.2});
   const animationLeft = useAnimation();
   const animationRight = useAnimation();
@@ -50,32 +53,6 @@ export const Main = () => {
     
   }, [inView]);
 
-  // useEffect(() => {
-  //   if (inView) {
-  //     animationLeft2.start({
-  //       x: 0,
-  //       transition: { type: "just", duration: 1, bounce: 0.4 }
-  //     });
-  //   }
-  //   if (!inView) {
-  //     animationLeft2.start({
-  //       x: "-100vw",
-  //     });
-  //   }
-    
-  //   if(inView){
-  //     animationRight2.start({
-  //       x: 0,
-  //       transition: {type: 'just', duration: 1, bounce: 0.4}
-  //     })
-  //   }
-  //   if(!inView){
-  //     animationRight2.start({
-  //       x: '+100vw',
-  //     })
-  //   }
-  // },[inView])
-
   return (
     <main>
       <div className="main-container">
@@ -90,7 +67,7 @@ export const Main = () => {
           </motion.div>
         </section>
         <section className="section2" id="ishlarimiz">
-          <h1 className="section2Title">Ishlarimiz</h1>
+          <h1 className="section2Title">{Language[lang].ishlarimiz}</h1>
           <div className="ishlarimizPhotosDiv">
             <motion.div className="motionDiv2" animate={animationLeft2}>
             <img src={Ishlarimiz3} alt="" className="ishlarimizPhoto1" />
@@ -105,7 +82,7 @@ export const Main = () => {
           </div>
         </section>
         <section className="section3" id="haqimizda">
-          <h1>Biz Haqimizda</h1>
+          <h1>{Language[lang].bizHaqimizda}</h1>
           <p className="aboutText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
             nesciunt sit repellat alias deserunt id dignissimos corrupti
