@@ -78,9 +78,7 @@ export const Header = () => {
               style={{ textDecoration: "none" }}
               className="adminMenuLi"
             >
-              <li>
-                {Language[lang].admin}
-              </li>
+              <li>{Language[lang].admin}</li>
             </NavLink>
           </ul>
           <div className="siteLanguages">
@@ -109,7 +107,7 @@ export const Header = () => {
                   smooth={true}
                   spy={true}
                 >
-                  Bosh sahifa
+                  {Language[lang].boshSahifa}
                 </Link>
               </li>
               <li>
@@ -120,7 +118,7 @@ export const Header = () => {
                   smooth={true}
                   spy={true}
                 >
-                  Ishlarimiz
+                  {Language[lang].ishlarimiz}
                 </Link>
               </li>
               <li>
@@ -131,11 +129,11 @@ export const Header = () => {
                   smooth={true}
                   spy={true}
                 >
-                  Biz haqimizda
+                  {Language[lang].bizHaqimizda}
                 </Link>
               </li>
               <NavLink to={"/adminLogin"} style={{ textDecoration: "none" }}>
-                <li>Admin</li>
+                <li>{Language[lang].admin}</li>
               </NavLink>
             </ul>
           </div>
