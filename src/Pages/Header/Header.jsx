@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import "./HeaderStyle.css";
 import LogoEnergy from "../Images/logo.jpg";
@@ -12,6 +12,7 @@ export const Header = () => {
   const handleMenu = () => {
     setMenuDiv(!menuDiv);
   };
+
   const handleClick = (event) => {
     switch (event.target.id) {
       case "ru":
@@ -24,6 +25,11 @@ export const Header = () => {
       }
     }
   };
+
+  console.log(lang);
+  useEffect(() => {
+    window.localStorage.setItem('langs', lang)
+  },[lang])
   return (
     <header>
       <div className="container">
